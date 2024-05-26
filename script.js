@@ -4,6 +4,7 @@
 ;(function (){
   const text = document.getElementsByTagName("text")[0]
   const input = document.getElementsByTagName("input")[0]
+  input.select()
 
   function resizeToFit() {
     text.textContent = input.value
