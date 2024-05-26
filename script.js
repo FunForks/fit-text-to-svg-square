@@ -3,7 +3,6 @@
  */
 ;(function (){
   const text = document.getElementsByTagName("text")[0]
-  const outline = document.getElementById("outline")
   const input = document.getElementsByTagName("input")[0]
 
   function resizeToFit() {
@@ -44,7 +43,7 @@
       y = bBox.y
       width = bBox.width // includes padding to left and right
       height = bBox.height
-      
+
       const yNow = text.getAttribute("y")
       const yGap = (100 - height) / 2
       const adjustY = y - yGap
@@ -62,17 +61,6 @@
     if (width > 100 || height > 100) {
       resize(smallEnough)
     }
-
-    ;(function (){
-      const bBox = text.getBBox()
-      const { x, y, width, height } = bBox
-      console.log("after bBox:", bBox);
-
-      outline.setAttribute("x", x)
-      outline.setAttribute("y", y)
-      outline.setAttribute("width", width)
-      outline.setAttribute("height", height)
-    })()
   }
 
   input.addEventListener("keyup", resizeToFit)

@@ -4,9 +4,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: 0;
+  --margin: 1px;
+  margin: var(--margin);
   background-color: #222;
   color: #ddd;
 
-  min-height: 100vh;
+  min-height: calc(100vh - var(--margin) * 2);
 }
